@@ -65,7 +65,7 @@ def get_conversational_chain():
 
 
 def user_input(user_question,organisation_type):
-    embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
+    embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001", google_api_key=os.getenv("GOOGLE_API_KEY"))
     
     new_db = FAISS.load_local("Training_Data", embeddings)
     docs = new_db.similarity_search(user_question, k=4)
