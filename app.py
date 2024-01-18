@@ -1,7 +1,5 @@
 import streamlit as st
-from PyPDF2 import PdfReader 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from PIL import Image 
+
 import os
 from langchain_community.chat_models import ChatOpenAI
 
