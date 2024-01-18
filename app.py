@@ -51,7 +51,7 @@ def get_conversational_chain():
     # organisation_type: {organisation_type}\n
     # """
     prompt_template = """
-    You are the administrator of a physician group seeking GUIDE reimbursement. Our practice specializes in dementia care, geriatrics, and gerontology, bringing together dementia care specialists, geriatricians, gerontologists, and a care navigator. To maximize your chances of success, we're collaboratively filling out the form, leveraging technology strategically to meet GUIDE program requirements. 
+    You are the administrator of a medical practitioners seeking GUIDE reimbursement. Our practice specializes in dementia care, geriatrics, and gerontology, bringing together dementia care specialists, geriatricians, gerontologists, and a care navigator. To maximize your chances of success, we're collaboratively filling out the form, leveraging technology strategically to meet GUIDE program requirements. 
     Given the following context, please provide a tailored response to this question, ensuring alignment with GUIDE's eligibility criteria, program priorities, and our organization's specific characteristics. Keep your answer concise and impactful, within 3000 characters.
     Organization Type: {organisation_type}\n
     Context: {context} \n
@@ -114,7 +114,7 @@ def main():
             link = "https://www.evva360.com/"  # Replace with your desired link
             st.markdown(f"""
             <a href="{link}" class="logo-img">
-                <img src="https://assets-global.website-files.com/61615716b8ea6250c3ff2ece/638cf97ede359004216a3c4e_Evva%20logo_1.png" width=100>
+                <img src="https://i.postimg.cc/tRLF6k3f/logo.jpg" width=105>
             </a>
             """, unsafe_allow_html=True)
 
@@ -124,8 +124,14 @@ def main():
     organisation_type = st.text_input("Type of Organization")
     user_question = st.text_input("Ask a Question")
 
-    if user_question:
-        user_input(user_question, organisation_type)
+    
+    if st.button("Submit"):
+        if user_question == "":
+            st.write("Please enter a question")
+        if organisation_type == "":
+            st.write("Please enter a type of organization")
+        with st.spinner("Processing..."):
+            user_input(user_question, organisation_type)
 
     
 
