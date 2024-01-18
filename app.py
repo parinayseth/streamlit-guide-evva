@@ -65,7 +65,7 @@ def save_excel(organisation_name, email, organisation_type, user_question, respo
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     current_date = now.strftime("%d/%m/%Y")
-    credentials_path = "D:/may1/test app/google key/evva-health-project-a1ffe000b79e.json"
+    credentials_path = "evva-health-project-fb14724414f1.json"
     spreadsheet_name = 'Evva Health Guide Program'
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     credentials = Credentials.from_service_account_file(credentials_path, scopes=scope)
